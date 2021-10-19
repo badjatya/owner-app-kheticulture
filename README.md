@@ -1,1 +1,1 @@
-This is owner app
+This is owner app of kheticulture
