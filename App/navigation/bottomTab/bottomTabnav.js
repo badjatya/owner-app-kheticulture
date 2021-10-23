@@ -4,21 +4,14 @@ import { Text, View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 // Importing Screens
-import HomeStackNavigatorScreen from "../homeStack/homeStackNavigation"
+import HomeStackNavigatorScreen from "../homeStack/homeStackNavigation";
+import TractorStackNavigatorScreen from "../tractorStack/tractorStack";
 
-// TODO: Importing Colors
+// Importing Colors
 import Colors from "../../constants/Colors";
 
-// TODO: Importing Icons
-import { FontAwesome, Foundation } from "@expo/vector-icons";
-
-function BookingScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Booking</Text>
-    </View>
-  );
-}
+// Importing Icons
+import { FontAwesome, Foundation, FontAwesome5 } from "@expo/vector-icons";
 
 function ProfileScreen() {
   return (
@@ -50,15 +43,11 @@ const BottomTabNavigatorScreen = () => {
         }}
       />
       <BottomTabNavigation.Screen
-        name="Bookings"
-        component={BookingScreen}
+        name="Tractors"
+        component={TractorStackNavigatorScreen}
         options={{
           tabBarIcon: () => (
-            <Foundation
-              name="clipboard-notes"
-              size={24}
-              color={Colors.primary}
-            />
+            <FontAwesome5 name="tractor" size={24} color={Colors.primary} />
           ),
         }}
       />
