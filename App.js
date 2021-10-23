@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-// Import component
-import HomeScreen from "./App/screen/main/Home/HomeScreen";
+// Import Navigation
+import Navigation from "./App/navigation/navigation"
 
 // Importing Fonts
 import * as Fonts from "expo-font";
@@ -32,7 +32,7 @@ export default function App() {
     );
   }
 
-  return <HomeScreen />;
+  return <Navigation />
 }
 
 const styles = StyleSheet.create({
