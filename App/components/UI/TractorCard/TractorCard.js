@@ -13,7 +13,15 @@ const TractorCard = (props) => {
     <View style={styles.tractorCard}>
       <View style={styles.tractorHeadingContainer}>
         <Text style={styles.heading}>{tractorData.tractorName}</Text>
-        <Text style={styles.status}>{tractorData.status}</Text>
+        <Text
+          style={{
+            fontFamily: "open-sans",
+            fontSize: 13,
+            color: tractorData.status === "Cancelled" ? "red" : Colors.primary,
+          }}
+        >
+          {tractorData.status}
+        </Text>
       </View>
 
       <View style={styles.detailContainer}>
@@ -57,11 +65,6 @@ const styles = StyleSheet.create({
   heading: {
     fontFamily: "open-sans-bold",
     fontSize: 16,
-  },
-  status: {
-    fontFamily: "open-sans",
-    fontSize: 13,
-    color: Colors.primary,
   },
   detailContainer: {
     flexDirection: "row",
