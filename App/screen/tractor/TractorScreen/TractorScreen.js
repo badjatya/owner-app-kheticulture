@@ -7,11 +7,15 @@ import TractorCard from "../../../components/UI/TractorCard/TractorCard";
 // Import data
 import tractorData from "../../../data/tractorRequest";
 
-const TractorScreen = () => {
+const TractorScreen = (props) => {
   return (
     <ScrollView style={styles.tractorScreen}>
       {tractorData.map((tractor) => (
-        <TractorCard tractorData={tractor} />
+        <TractorCard
+          tractorData={tractor}
+          key={tractor.id}
+          onClick={() => props.navigation.push("Tractor Request")}
+        />
       ))}
     </ScrollView>
   );

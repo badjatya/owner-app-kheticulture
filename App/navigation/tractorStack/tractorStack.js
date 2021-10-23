@@ -6,6 +6,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 // IMPORTING Importing Screens
 import TractorScreen from "../../screen/tractor/TractorScreen/TractorScreen";
+import TractorRequest from "../../screen/tractor/TractorRequest/TractorRequest";
 
 // IMPORTING Icons
 import { FontAwesome, FontAwesome5 } from "@expo/vector-icons";
@@ -37,6 +38,10 @@ const TractorStackNavigatorScreen = () => {
       }}
     >
       <TractorStackNavigator.Screen name="Tractors" component={TractorScreen} />
+      <TractorStackNavigator.Screen
+        name="Tractor Request"
+        component={TractorRequest}
+      />
     </TractorStackNavigator.Navigator>
   );
 };

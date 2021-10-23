@@ -35,7 +35,7 @@ const TractorCard = (props) => {
       </View>
 
       <View style={styles.button}>
-        <CustomButton title="View" />
+        <CustomButton title="View" onPress={props.onClick} />
       </View>
     </View>
   );
