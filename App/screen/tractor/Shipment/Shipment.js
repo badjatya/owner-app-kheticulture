@@ -11,7 +11,7 @@ import {
 // Importing Components
 import CustomButton from "../../../components/UI/CustomButton/CustomButton";
 
-const Shipment = () => {
+const Shipment = (props) => {
   // State
   const [driverName, setDriverName] = useState("");
   const [driverContact, setDriverContact] = useState("");
@@ -31,16 +31,19 @@ const Shipment = () => {
           style={styles.input}
           value={driverName}
           onChangeText={setDriverName}
-          placeholder="Enter Drive Name..."
+          placeholder="Enter Driver Name..."
         />
         <TextInput
           style={styles.input}
           value={driverContact.toString()}
           onChangeText={setDriverContact}
-          placeholder="Enter Drive Contact..."
+          placeholder="Enter Driver Contact..."
         />
         <View style={styles.button}>
-          <CustomButton title="Start" />
+          <CustomButton
+            title="Start"
+            onPress={() => props.navigation.push("Create Job")}
+          />
         </View>
       </View>
     </ScrollView>

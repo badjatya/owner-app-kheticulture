@@ -8,6 +8,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import TractorScreen from "../../screen/tractor/TractorScreen/TractorScreen";
 import TractorRequest from "../../screen/tractor/TractorRequest/TractorRequest";
 import Shipment from "../../screen/tractor/Shipment/Shipment";
+import CreateJob from "../../screen/tractor/CreateJob/CreateJob";
 
 // IMPORTING Icons
 import { FontAwesome, FontAwesome5 } from "@expo/vector-icons";
@@ -45,6 +46,7 @@ const TractorStackNavigatorScreen = () => {
       />
 
       <TractorStackNavigator.Screen name="Shipment" component={Shipment} />
+      <TractorStackNavigator.Screen name="Create Job" component={CreateJob} />
     </TractorStackNavigator.Navigator>
   );
 };
