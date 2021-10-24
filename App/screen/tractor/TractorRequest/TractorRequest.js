@@ -5,7 +5,7 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import CustomButton from "../../../components/UI/CustomButton/CustomButton";
 import CustomButtonFull from "../../../components/UI/CustomButtonFull/CustomButtonFull";
 
-const TractorRequest = () => {
+const TractorRequest = (props) => {
   return (
     <View>
       <Image
@@ -27,11 +27,17 @@ const TractorRequest = () => {
       </View>
       <View style={styles.buttonContainer}>
         <View style={styles.button}>
-          <CustomButton title="Accept" />
+          <CustomButton
+            title="Accept"
+            onPress={() => props.navigation.push("Shipment")}
+          />
         </View>
 
         <View style={styles.buttonFull}>
-          <CustomButtonFull title="Reject" />
+          <CustomButtonFull
+            title="Reject"
+            onPress={() => props.navigation.push("Tractors")}
+          />
         </View>
       </View>
     </View>
