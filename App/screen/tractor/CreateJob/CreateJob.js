@@ -11,7 +11,7 @@ import CustomButtonFull from "../../../components/UI/CustomButtonFull/CustomButt
 // Importing Colors
 import Colors from "../../../constants/Colors";
 
-const CreateJob = () => {
+const CreateJob = (props) => {
   const [checked, setChecked] = useState("first");
   return (
     <ScrollView>
@@ -51,7 +51,10 @@ const CreateJob = () => {
         </View>
 
         <View style={styles.button}>
-          <CustomButtonFull title="Finish" />
+          <CustomButtonFull
+            title="Finish"
+            onPress={() => props.navigation.push("Invoice")}
+          />
         </View>
       </View>
     </ScrollView>
