@@ -15,6 +15,22 @@ const Shipment = (props) => {
   // State
   const [driverName, setDriverName] = useState("");
   const [driverContact, setDriverContact] = useState("");
+  const [message, setMessage] = useState("");
+
+  const submitHandler = () => {
+    if (!driverName) {
+      setMessage("Please enter driver name");
+      return;
+    } else if (!driverContact) {
+      setMessage("Please enter driver contact");
+      return;
+    }
+
+    setMessage("");
+    setDriverName("");
+    setDriverContact("");
+    props.navigation.push("Create Job");
+  };
 
   return (
     <ScrollView>
@@ -33,17 +49,27 @@ const Shipment = (props) => {
           onChangeText={setDriverName}
           placeholder="Enter Driver Name..."
         />
+
+        {/* error message  */}
+        {!driverName && message === "Please enter driver name" ? (
+          <Text style={styles.message}>{message}</Text>
+        ) : null}
+
         <TextInput
           style={styles.input}
           value={driverContact.toString()}
           onChangeText={setDriverContact}
+          keyboardType="number-pad"
           placeholder="Enter Driver Contact..."
         />
+
+        {/* error message  */}
+        {!driverContact && message === "Please enter driver contact" ? (
+          <Text style={styles.message}>{message}</Text>
+        ) : null}
+
         <View style={styles.button}>
-          <CustomButton
-            title="Start"
-            onPress={() => props.navigation.push("Create Job")}
-          />
+          <CustomButton title="Start" onPress={submitHandler} />
         </View>
       </View>
     </ScrollView>
@@ -72,4 +98,10 @@ const styles = StyleSheet.create({
     borderRadius: 15,
   },
   button: {},
+  message: {
+    color: "red",
+    marginTop: -10,
+    marginBottom: 20,
+    marginLeft: 5,
+  },
 });
