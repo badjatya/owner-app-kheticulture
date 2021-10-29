@@ -1,16 +1,5 @@
 const tractorRequest = [
   {
-    id: 1,
-    tractorName: "Utility Tractor",
-    status: "New",
-    image:
-      "https://images.pexels.com/photos/3793/agriculture-tractor.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    bookingDate: "24 Nov, 2021",
-    farmerName: "Raj Jain",
-    location: "Indore",
-    contact: "1231231234",
-  },
-  {
     id: 2,
     tractorName: "Compact Tractor",
     status: "Scheduled",
