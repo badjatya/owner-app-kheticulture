@@ -5,6 +5,7 @@ import {
   TRACTOR_REQUEST_IN_TRANSIT,
   TRACTOR_REQUEST_REACHED,
   TRACTOR_REQUEST_JOB_IN_PROGRESS,
+  TRACTOR_REQUEST_FINISH,
 } from "../../actions/tractor.action";
 
 const data = {
@@ -53,6 +54,12 @@ const tractorReducer = (state = initialState, action) => {
       return {
         ...state,
         tractorRequest: { ...state.tractorRequest, status: "Job In Progress" },
+      };
+
+    case TRACTOR_REQUEST_FINISH:
+      return {
+        ...state,
+        tractorRequest: { ...state.tractorRequest, status: "Finish" },
       };
   }
   return state;

@@ -4,6 +4,7 @@ export const TRACTOR_REQUEST_IN_TRANSIT = "TRACTOR_REQUEST_IN_TRANSIT";
 export const TRACTOR_REQUEST_REACHED = "TRACTOR_REQUEST_REACHED";
 export const TRACTOR_REQUEST_JOB_IN_PROGRESS =
   "TRACTOR_REQUEST_JOB_IN_PROGRESS";
+export const TRACTOR_REQUEST_FINISH = "TRACTOR_REQUEST_FINISH";
 
 export const tractorRequestAccepted = () => {
   return { type: TRACTOR_REQUEST_ACCEPTED };
@@ -23,4 +24,8 @@ export const tractorRequestReached = () => {
 
 export const tractorRequestJobInProgress = () => {
   return { type: TRACTOR_REQUEST_JOB_IN_PROGRESS };
+};
+
+export const tractorRequestFinish = () => {
+  return { type: TRACTOR_REQUEST_FINISH };
 };

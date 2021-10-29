@@ -53,6 +53,8 @@ const TractorCard = (props) => {
           <CustomButton title="Create Job" onPress={props.onCreateJob} />
         ) : tractorData.status === "Job In Progress" ? (
           <CustomButton title="Ongoing Job" onPress={props.onGoingJob} />
+        ) : tractorData.status === "Finish" ? (
+          <CustomButton title="Invoice" onPress={props.onInvoice} />
         ) : (
           <CustomButton title="View" onPress={props.onClick} />
         )}

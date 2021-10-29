@@ -30,6 +30,7 @@ const TractorScreen = (props) => {
         onReached={() => dispatch(tractorActions.tractorRequestReached())}
         onCreateJob={() => props.navigation.push("Create Job")}
         onGoingJob={() => props.navigation.push("Details")}
+        onInvoice={() => props.navigation.push("Invoice")}
       />
 
       {/* {tractorData.map((tractor) => (
