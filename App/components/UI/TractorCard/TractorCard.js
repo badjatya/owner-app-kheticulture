@@ -43,7 +43,11 @@ const TractorCard = (props) => {
       </View>
 
       <View style={styles.button}>
-        <CustomButton title="View" onPress={props.onClick} />
+        {tractorData.status === "Accepted" ? (
+          <CustomButton title="Schedule" onPress={props.onSchedule} />
+        ) : (
+          <CustomButton title="View" onPress={props.onClick} />
+        )}
       </View>
     </View>
   );

@@ -5,7 +5,15 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import CustomButton from "../../../components/UI/CustomButton/CustomButton";
 import CustomButtonFull from "../../../components/UI/CustomButtonFull/CustomButtonFull";
 
+// Importing redux
+import { useSelector, useDispatch } from "react-redux";
+
+// Importing actions
+import * as tractorActions from "../../../store/actions/tractor.action";
+// dispatch(tractorActions.tractorRequestAccepted())
+
 const TractorRequest = (props) => {
+  const dispatch = useDispatch();
   return (
     <View>
       <Image
@@ -29,7 +37,10 @@ const TractorRequest = (props) => {
         <View style={styles.button}>
           <CustomButton
             title="Accept"
-            onPress={() => props.navigation.push("Shipment")}
+            onPress={() => {
+              props.navigation.push("Tractors");
+              dispatch(tractorActions.tractorRequestAccepted());
+            }}
           />
         </View>
 

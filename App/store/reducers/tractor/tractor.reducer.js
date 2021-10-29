@@ -1,4 +1,5 @@
 // Importing Actions
+import { TRACTOR_REQUEST_ACCEPTED } from "../../actions/tractor.action";
 
 const initialState = {
   tractorRequest: {
@@ -16,6 +17,11 @@ const initialState = {
 
 const tractorReducer = (state = initialState, action) => {
   switch (action.type) {
+    case TRACTOR_REQUEST_ACCEPTED:
+      return {
+        ...state,
+        tractorRequest: { ...state.tractorRequest, status: "Accepted" },
+      };
   }
   return state;
 };

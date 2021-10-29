@@ -10,16 +10,22 @@ import tractorData from "../../../data/tractorRequest";
 // Importing redux
 import { useSelector, useDispatch } from "react-redux";
 
+// Importing actions
+import * as tractorActions from "../../../store/actions/tractor.action";
+
 const TractorScreen = (props) => {
   // taking data
   const TRACTOR_REQUEST_DATA = useSelector(
     (state) => state.tractors.tractorRequest
   );
+
+  const dispatch = useDispatch();
   return (
     <ScrollView style={styles.tractorScreen}>
       <TractorCard
         tractorData={TRACTOR_REQUEST_DATA}
         onClick={() => props.navigation.push("Tractor Request")}
+        onSchedule={() => props.navigation.push("Shipment")}
       />
 
       {tractorData.map((tractor) => (
