@@ -1,12 +1,16 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 // Import Navigation
-import Navigation from "./App/navigation/navigation"
+import Navigation from "./App/navigation/navigation";
 
 // Importing Fonts
 import * as Fonts from "expo-font";
 import AppLoading from "expo-app-loading";
+
+// IMPORTING Redux and root reducer
+import { Provider } from "react-redux";
+import store from "./App/store/reducers/rootReducers";
 
 // Fetching Fonts
 const fetchFonts = () => {
@@ -16,9 +20,7 @@ const fetchFonts = () => {
   });
 };
 
-
 export default function App() {
-
   // font state
   const [fontLoaded, setFontLoaded] = useState(false);
 
@@ -32,7 +34,11 @@ export default function App() {
     );
   }
 
-  return <Navigation />
+  return (
+    <Provider store={store}>
+      <Navigation />
+    </Provider>
+  );
 }
 
 const styles = StyleSheet.create({
