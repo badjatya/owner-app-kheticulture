@@ -10,6 +10,7 @@ import TractorRequest from "../../screen/tractor/TractorRequest/TractorRequest";
 import Shipment from "../../screen/tractor/Shipment/Shipment";
 import CreateJob from "../../screen/tractor/CreateJob/CreateJob";
 import Invoice from "../../screen/tractor/Invoice/Invoice";
+import TractorDetail from "../../screen/tractor/tractorDetail/tractorDetail";
 
 // IMPORTING Icons
 import { FontAwesome, FontAwesome5 } from "@expo/vector-icons";
@@ -49,6 +50,7 @@ const TractorStackNavigatorScreen = () => {
       <TractorStackNavigator.Screen name="Shipment" component={Shipment} />
       <TractorStackNavigator.Screen name="Create Job" component={CreateJob} />
       <TractorStackNavigator.Screen name="Invoice" component={Invoice} />
+      <TractorStackNavigator.Screen name="Details" component={TractorDetail} />
     </TractorStackNavigator.Navigator>
   );
 };

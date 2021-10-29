@@ -29,6 +29,7 @@ const TractorScreen = (props) => {
         onStartJob={() => dispatch(tractorActions.tractorRequestInTransit())}
         onReached={() => dispatch(tractorActions.tractorRequestReached())}
         onCreateJob={() => props.navigation.push("Create Job")}
+        onGoingJob={() => props.navigation.push("Details")}
       />
 
       {/* {tractorData.map((tractor) => (
