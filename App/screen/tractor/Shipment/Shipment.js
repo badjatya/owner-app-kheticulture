@@ -11,7 +11,15 @@ import {
 // Importing Components
 import CustomButton from "../../../components/UI/CustomButton/CustomButton";
 
+// Importing redux
+import { useSelector, useDispatch } from "react-redux";
+
+// Importing actions
+import * as tractorActions from "../../../store/actions/tractor.action";
+
 const Shipment = (props) => {
+  const dispatch = useDispatch();
+
   // State
   const [driverName, setDriverName] = useState("");
   const [driverContact, setDriverContact] = useState("");
@@ -29,7 +37,8 @@ const Shipment = (props) => {
     setMessage("");
     setDriverName("");
     setDriverContact("");
-    props.navigation.push("Create Job");
+    props.navigation.push("Tractors");
+    dispatch(tractorActions.tractorRequestScheduled());
   };
 
   return (
@@ -69,7 +78,7 @@ const Shipment = (props) => {
         ) : null}
 
         <View style={styles.button}>
-          <CustomButton title="Start" onPress={submitHandler} />
+          <CustomButton title="Submit" onPress={submitHandler} />
         </View>
       </View>
     </ScrollView>

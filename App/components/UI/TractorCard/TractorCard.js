@@ -46,7 +46,11 @@ const TractorCard = (props) => {
         {tractorData.status === "Accepted" ? (
           <CustomButton title="Schedule" onPress={props.onSchedule} />
         ) : tractorData.status === "Scheduled" ? (
-          <CustomButton title="Start Job" onPress={props.onClick} />
+          <CustomButton title="Start Job" onPress={props.onStartJob} />
+        ) : tractorData.status === "In Transit" ? (
+          <CustomButton title="Reached" onPress={props.onReached} />
+        ) : tractorData.status === "Reached" ? (
+          <CustomButton title="Create Job" onPress={props.onCreateJob} />
         ) : (
           <CustomButton title="View" onPress={props.onClick} />
         )}

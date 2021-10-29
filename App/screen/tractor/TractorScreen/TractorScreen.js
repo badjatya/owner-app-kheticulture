@@ -26,15 +26,18 @@ const TractorScreen = (props) => {
         tractorData={TRACTOR_REQUEST_DATA}
         onClick={() => props.navigation.push("Tractor Request")}
         onSchedule={() => props.navigation.push("Shipment")}
+        onStartJob={() => dispatch(tractorActions.tractorRequestInTransit())}
+        onReached={() => dispatch(tractorActions.tractorRequestReached())}
+        onCreateJob={() => props.navigation.push("Create Job")}
       />
 
-      {tractorData.map((tractor) => (
+      {/* {tractorData.map((tractor) => (
         <TractorCard
           tractorData={tractor}
           key={tractor.id}
           onClick={() => props.navigation.push("Tractor Request")}
         />
-      ))}
+      ))} */}
     </ScrollView>
   );
 };

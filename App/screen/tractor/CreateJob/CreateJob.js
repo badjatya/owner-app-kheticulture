@@ -11,8 +11,15 @@ import CustomButtonFull from "../../../components/UI/CustomButtonFull/CustomButt
 // Importing Colors
 import Colors from "../../../constants/Colors";
 
+// Importing redux
+import { useSelector, useDispatch } from "react-redux";
+
+// Importing actions
+import * as tractorActions from "../../../store/actions/tractor.action";
+
 const CreateJob = (props) => {
   const [checked, setChecked] = useState("first");
+  const dispatch = useDispatch();
   return (
     <ScrollView>
       <Image
@@ -47,13 +54,12 @@ const CreateJob = (props) => {
         </View>
 
         <View style={styles.button}>
-          <CustomButton title="Start" />
-        </View>
-
-        <View style={styles.button}>
-          <CustomButtonFull
-            title="Finish"
-            onPress={() => props.navigation.push("Invoice")}
+          <CustomButton
+            title="Start"
+            onPress={() => {
+              props.navigation.push("Tractors");
+              dispatch(tractorActions.tractorRequestJobInProgress());
+            }}
           />
         </View>
       </View>
