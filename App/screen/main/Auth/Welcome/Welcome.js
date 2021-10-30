@@ -12,7 +12,7 @@ import Colors from "../../../../constants/Colors";
 import CustomButton from "../../../../components/UI/CustomButton/CustomButton";
 import CustomButtonFull from "../../../../components/UI/CustomButtonFull/CustomButtonFull";
 
-const Welcome = () => {
+const Welcome = (props) => {
   return (
     <View style={styles.container}>
       <Text style={styles.welcomeMessage}>
@@ -24,11 +24,17 @@ const Welcome = () => {
       </View>
 
       <View style={styles.button}>
-        <CustomButton title="Login" />
+        <CustomButton
+          title="Login"
+          onPress={() => props.navigation.push("Login")}
+        />
       </View>
 
       <View style={styles.fullButton}>
-        <CustomButtonFull title="Signup" />
+        <CustomButtonFull
+          title="Signup"
+          onPress={() => props.navigation.push("Signup")}
+        />
       </View>
     </View>
   );

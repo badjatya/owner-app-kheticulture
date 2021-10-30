@@ -7,6 +7,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 // IMPORTING Importing Screens
 import Welcome from "../../screen/main/Auth/Welcome/Welcome";
 import BottomTabNavigatorScreen from "../bottomTab/bottomTabnav";
+import Login from "../../screen/main/Auth/Login/Login";
+import Signup from "../../screen/main/Auth/Signup/Signup";
 
 // NOTE Creating HomeStackNavigator
 const AuthStackNavigator = createStackNavigator();
@@ -32,6 +34,9 @@ const AuthNavigatorScreen = () => {
           headerShown: false,
         }}
       />
+
+      <AuthStackNavigator.Screen name="Login" component={Login} />
+      <AuthStackNavigator.Screen name="Signup" component={Signup} />
     </AuthStackNavigator.Navigator>
   );
 };
