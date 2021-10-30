@@ -23,7 +23,6 @@ const AuthNavigatorScreen = () => {
         // headerTitleAlign: "center",
         headerStyle: {
           backgroundColor: Platform.OS === "android" ? Colors.primary : "",
-          height: 60,
         },
         headerTintColor:
           Platform.OS === "android" ? Colors.white : Colors.primary,

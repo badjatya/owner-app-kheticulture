@@ -26,8 +26,8 @@ const Login = (props) => {
   const [errorMessage, setErrorMessage] = useState("");
 
   const loginHandler = () => {
-    if (aadharCard.length < 1) {
-      setErrorMessage("Enter correct aadhar number");
+    if (aadharCard.length < 12) {
+      setErrorMessage("Aadhar no. must be of 12 digits");
       return;
     }
     if (!password) {
@@ -55,7 +55,7 @@ const Login = (props) => {
             keyboardType="number-pad"
             onChangeText={(text) => setAadharCard(text)}
           />
-          {errorMessage === "Enter correct aadhar number" ? (
+          {errorMessage === "Aadhar no. must be of 12 digits" ? (
             <Text style={styles.error}>{errorMessage}</Text>
           ) : null}
         </View>
