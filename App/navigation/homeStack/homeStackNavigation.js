@@ -7,7 +7,6 @@ import { createStackNavigator } from "@react-navigation/stack";
 // IMPORTING Importing Screens
 import HomeScreen from "../../screen/main/Home/HomeScreen";
 
-
 // IMPORTING Icons
 import { FontAwesome, FontAwesome5 } from "@expo/vector-icons";
 
@@ -42,7 +41,7 @@ const HomeStackNavigatorScreen = () => {
         component={HomeScreen}
         options={({ navigation }) => ({
           headerLeft: () => (
-            <TouchableOpacity >
+            <TouchableOpacity>
               <FontAwesome
                 style={{ paddingLeft: 15 }}
                 name="bars"
@@ -63,8 +62,6 @@ const HomeStackNavigatorScreen = () => {
           ),
         })}
       />
-
-      
     </HomeStackNavigator.Navigator>
   );
 };

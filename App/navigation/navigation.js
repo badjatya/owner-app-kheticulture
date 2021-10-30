@@ -1,15 +1,16 @@
-import * as React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import * as React from "react";
+import { NavigationContainer } from "@react-navigation/native";
 
 // Importing Navigation
-import BottomTabNavigatorScreen from './bottomTab/bottomTabnav';
+// import BottomTabNavigatorScreen from './bottomTab/bottomTabnav';
+import AuthNavigatorScreen from "./AuthStack/Auth";
 
- const Navigation = () => {
+const Navigation = () => {
   return (
     <NavigationContainer>
-        <BottomTabNavigatorScreen />
+      <AuthNavigatorScreen />
     </NavigationContainer>
   );
-}
+};
 
 export default Navigation;
