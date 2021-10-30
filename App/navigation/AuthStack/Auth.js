@@ -10,15 +10,31 @@ import BottomTabNavigatorScreen from "../bottomTab/bottomTabnav";
 import Login from "../../screen/main/Auth/Login/Login";
 import Signup from "../../screen/main/Auth/Signup/Signup";
 
+// IMPORTING Colors
+import Colors from "../../constants/Colors";
+
 // NOTE Creating HomeStackNavigator
 const AuthStackNavigator = createStackNavigator();
 
 const AuthNavigatorScreen = () => {
   return (
     <AuthStackNavigator.Navigator
-    // screenOptions={{
-    //   headerShown: false,
-    // }}
+      screenOptions={{
+        // headerTitleAlign: "center",
+        headerStyle: {
+          backgroundColor: Platform.OS === "android" ? Colors.primary : "",
+          height: 80,
+        },
+        headerTintColor:
+          Platform.OS === "android" ? Colors.white : Colors.primary,
+        headerTitleStyle: {
+          fontFamily: "open-sans-bold",
+        },
+        headerBackTitleStyle: {
+          fontFamily: "open-sans",
+          fontWeight: "normal",
+        },
+      }}
     >
       <AuthStackNavigator.Screen
         name="Welcome"
