@@ -14,14 +14,23 @@ const AuthStackNavigator = createStackNavigator();
 const AuthNavigatorScreen = () => {
   return (
     <AuthStackNavigator.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}
+    // screenOptions={{
+    //   headerShown: false,
+    // }}
     >
-      <AuthStackNavigator.Screen name="Welcome" component={Welcome} />
+      <AuthStackNavigator.Screen
+        name="Welcome"
+        component={Welcome}
+        options={{
+          headerShown: false,
+        }}
+      />
       <AuthStackNavigator.Screen
         name="BottomTabNavigatorScreen"
         component={BottomTabNavigatorScreen}
+        options={{
+          headerShown: false,
+        }}
       />
     </AuthStackNavigator.Navigator>
   );
