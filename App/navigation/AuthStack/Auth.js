@@ -23,7 +23,7 @@ const AuthNavigatorScreen = () => {
         // headerTitleAlign: "center",
         headerStyle: {
           backgroundColor: Platform.OS === "android" ? Colors.primary : "",
-          height: 80,
+          height: 60,
         },
         headerTintColor:
           Platform.OS === "android" ? Colors.white : Colors.primary,
@@ -43,6 +43,9 @@ const AuthNavigatorScreen = () => {
           headerShown: false,
         }}
       />
+
+      <AuthStackNavigator.Screen name="Login" component={Login} />
+      <AuthStackNavigator.Screen name="Signup" component={Signup} />
       <AuthStackNavigator.Screen
         name="BottomTabNavigatorScreen"
         component={BottomTabNavigatorScreen}
@@ -50,9 +53,6 @@ const AuthNavigatorScreen = () => {
           headerShown: false,
         }}
       />
-
-      <AuthStackNavigator.Screen name="Login" component={Login} />
-      <AuthStackNavigator.Screen name="Signup" component={Signup} />
     </AuthStackNavigator.Navigator>
   );
 };
